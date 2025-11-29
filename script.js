@@ -23,7 +23,7 @@ document.getElementById("orderForm").addEventListener("submit", function (e) {
   const phoneNumber = "254748178005";
 
   // Build correct WhatsApp URL
-  const text = `Name: ${name}\n` + `Order: ${order}\n` + `Message: ${orderdetails}`;
+  const text = `Name: ${name}\n` + `${order}\n` + `Message: ${orderdetails}`;
 
   const url =
     "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(text);
