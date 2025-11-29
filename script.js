@@ -14,13 +14,16 @@ document.getElementById("orderForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
   const name = document.getElementById("name").value.trim();
-  const order = document.getElementById("order").value.trim();
-  const message = document.getElementById("message").value.trim();
+  const orderdetails = document.getElementById("description").value.trim();
+  const size = document.getElementById("size").value;
+  const flavor = document.getElementById("flavor").value;
+  const quantity = document.getElementById("quantity").value.trim();
+  const order = `Size: ${size}, Flavor: ${flavor}, Quantity: ${quantity}`;
 
   const phoneNumber = "254748178005";
 
   // Build correct WhatsApp URL
-  const text = `Name: ${name}\n` + `Order: ${order}\n` + `Message: ${message}`;
+  const text = `Name: ${name}\n` + `Order: ${order}\n` + `Message: ${orderdetails}`;
 
   const url =
     "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(text);
